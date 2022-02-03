@@ -11,11 +11,11 @@ One of SALURBAL's objectives is investigating temperature as exposure in relatio
 - [Global Urban Footprint data](https://drive.google.com/drive/folders/1_NM6c_SDAqb0LAOXt8LpbTT7eIL3HgAY)
 
 ### Access to imputed data:
-- [ERA5Land imputed data](https://drive.google.com/drive/folders/1Eps9MGcVt_7Yn32Yboub3FVZZnQVrD14?usp=sharing)
+- [ERA5Land imputed data](https://drive.google.com/drive/u/1/folders/1lpLFuolGD9iz7jNLnbh9kyjODtkg9Yk-)
 
 ### Access to final data:
-- [L1 AD and UX data](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing)
-- [L2 data](https://drive.google.com/file/d/1oa72qk_2zzbePTr9kCKzKs4DxhZl7I5Z/view?usp=sharing)
+- [L1 AD and UX data](https://drive.google.com/drive/u/1/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn)
+- [L2 data](https://drive.google.com/drive/folders/1VMb7JpvLAMVuypfpp7uk_FQebS3qQvHU?usp=sharing)
 
 ### Python script for computing population-weighted mean daily temperature for SALURBAL cities:
 - [Python code](https://github.com/Drexel-UHC/salurbal_heat/blob/master/scripts/ERA_land_fill__final_version_vZonalStats.py)
@@ -53,26 +53,32 @@ where 〖area〗_i is the area of the overlap between grid cell i and the spatia
 
 
 **Notes**:  
-- The final tables of population-weighted mean daily temperature are [L1AD_UX_96_15.csv](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing) and [L2_96_15.csv](https://drive.google.com/file/d/1oa72qk_2zzbePTr9kCKzKs4DxhZl7I5Z/view?usp=sharing). 
+- The final tables of population-weighted mean daily temperature are [L1AD_UX_96_15.csv](https://drive.google.com/drive/u/1/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn) and [L2_96_15.csv](https://drive.google.com/drive/u/1/folders/1VMb7JpvLAMVuypfpp7uk_FQebS3qQvHU). 
 ---
 
-**Codebook for [L1AD and UX data](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing):**  
-- SALID1: City ID. (6 digits)
-- ADtemp_pw: Population weighted temperature mean at L1AD level (city-level). 
-- ADtemp_x: Unweighted temperature mean at L1AD level (city-level). 
-- UXtemp_pw:Population weighted temperature mean at L1UX level (urban extent). 
-- UXtemp_x:  Unweighted temperature mean at L1UX level (urban extent). 
-- date: year-month-day.
+**Codebook for [L1AD and UX data](https://drive.google.com/drive/u/1/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn):**  
+- L1Name: City name
+- Country: Country name
+- date: year-month-day
+- ADtemp_pw: Population weighted temperature mean at L1AD level (city-level)
+- ADtemp_x: Unweighted temperature mean at L1AD level (city-level)
+- UXtemp_pw:Population weighted temperature mean at L1UX level (urban extent) 
+- UXtemp_x:  Unweighted temperature mean at L1UX level (urban extent)
+
 
 Preview *L1AD_UX_96_15.csv*:  
 
 <img src="scripts/L1_preview.png" align="center" width="60%">
 
-**Codebook for [L2 data](https://drive.google.com/file/d/1oa72qk_2zzbePTr9kCKzKs4DxhZl7I5Z/view?usp=sharing):**  
-- SALID2: Sub-city ID (8 digits). 
-- L2temp_pw: Population weighted temperature mean at L2 level (sub-city). 
-- L2temp_x: Unweighted temperature mean at L2 level (sub-city). 
-- date: year-month-day. 
+**Codebook for [L2 data](https://drive.google.com/drive/folders/1VMb7JpvLAMVuypfpp7uk_FQebS3qQvHU?usp=sharing):**  
+- L2Name: Sub-city name
+- L2Type: Type of sub-city unit
+- L1Name: City name
+- Country: Country name
+- date: year-month-day
+- L2temp_pw: Population weighted temperature mean at L2 level (sub-city)
+- L2temp_x: Unweighted temperature mean at L2 level (sub-city)
+
 
 Preview *L2_96_15.csv*:  
 
