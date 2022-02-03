@@ -1,11 +1,9 @@
 
-# Daily mean temperature data - ERA5Land
-## Sample of 371 Latin American Cities from 1996-2015
-### Oct 21, 2020
+# Computing daily mean temperature from ERA5Land for 371 Latin American Cities from 1996-2015
 
 Many researchers involved in SALURBAL are interested in using historical temperature reanalysis data. ERA5Land data neglects pixels that have more than 50% water. However, many cities across the world are situated next to the ocean. Since we were losing information, our team interpolated data from ERA5 (at a 31km x 31km resolution) and imputed it at the ERA5Land 9km x 9km resolution, filling the gaps from those "missing" pixels.
 
-One of SALURBAL's objectives is investigating temperature as exposure in relation to various health outcomes, after imputation we weighted the temperature pixels by population to better approximate population exposure. Specifically, we used the 2010 estimates of the spatial distribution of population from WorldPop (100m x 100m). For the cities in Panama and Peru we weighted temperature by the 2010 Global Urban Footprint dataset because population data is not as accurate for Panama and Peru. After population-weighting, we computed mean daily temperature over 1996-2015 for different types of SALURBAL geographies -- cities (AD), sub-cities (L2), and cities' urban extent (UX). 
+One of SALURBAL's objectives is investigating temperature as exposure in relation to various health outcomes, and after imputation we weighted the temperature pixels by population to better approximate population exposure. Specifically, we used the 2010 estimates of the spatial distribution of population from WorldPop (100m x 100m). For the cities in Panama and Peru we weighted temperature by the 2010 Global Urban Footprint dataset because population data is not as accurate for Panama and Peru. After population-weighting, we computed mean daily temperature over 1996-2015 for different types of SALURBAL geographies -- cities (AD), sub-cities (L2), and cities' urban extent (UX). 
 
 ### Access to raw data:
 - [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
@@ -19,10 +17,12 @@ One of SALURBAL's objectives is investigating temperature as exposure in relatio
 - [L1 AD and UX data](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing)
 - [L2 data](https://drive.google.com/file/d/1oa72qk_2zzbePTr9kCKzKs4DxhZl7I5Z/view?usp=sharing)
 
+### Python script for computing population-weighted mean daily temperature for SALURBAL cities:
+- [Python code](https://github.com/Drexel-UHC/salurbal_heat/blob/master/scripts/ERA_land_fill__final_version_vZonalStats.py)
+
 ---
 
 ## Data Imputation
-
 
 To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels: 
 <p align="center">
@@ -53,31 +53,28 @@ where 〖area〗_i is the area of the overlap between grid cell i and the spatia
 
 
 **Notes**:  
-- The final tables are L1_AD_UX_96_15.csv, **L1_ADUX_wp_2001_2015_v3.csv**, **L2_2001_2015_v3.csv**, and **L2_wp_2001_2015_v3.csv**. The files containing "wp" have population weighted temperature means for all cities including Panama and Peru. **L1_ADUX_2001_2015_v3.csv** and **L2_2001_2015_v3.csv** have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
-- To make the data processing faster, download the [RData files](https://drive.google.com/drive/folders/1GSB6qLZN1eJo2-tNh7gWSReZgAo6p8gk) for L1 or L2.  
-- Make sure to run the processes differently for leap years. Leap years (2004, 2008, and 2012) are processed using 366 instead of 365 days in a year within the loop.
-
+- The final tables of population-weighted mean daily temperature are [L1AD_UX_96_15.csv](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing) and [L2_96_15.csv](https://drive.google.com/file/d/1oa72qk_2zzbePTr9kCKzKs4DxhZl7I5Z/view?usp=sharing). 
 ---
 
-**Codebook for L1:**  
+**Codebook for [L1AD and UX data](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing):**  
 - SALID1: City ID. (6 digits)
-- ADtemp_pw: Population weighted temperature mean at L1AD level. 
-- ADtemp_x: Unweighted temperature mean at L1AD level. 
-- UXtemp_pw:Population weighted temperature mean at L1UXX level. 
-- UXtemp_x:  Unweighted temperature mean at L1UX level. 
+- ADtemp_pw: Population weighted temperature mean at L1AD level (city-level). 
+- ADtemp_x: Unweighted temperature mean at L1AD level (city-level). 
+- UXtemp_pw:Population weighted temperature mean at L1UX level (urban extent). 
+- UXtemp_x:  Unweighted temperature mean at L1UX level (urban extent). 
 - date: year-month-day.
 
-Preview *L1_2001_2015_v3.csv*:  
+Preview *L1AD_UX_96_15.csv*:  
 
 <img src="scripts/L1_preview.png" align="center" width="60%">
 
-**Codebook for L2:**  
-- SALID2: City ID (8 digits). 
-- L2temp_pw: Population weighted temperature mean at L2 level. 
-- L2temp_x: Unweighted temperature mean at L2 level. 
+**Codebook for [L2 data](https://drive.google.com/file/d/1oa72qk_2zzbePTr9kCKzKs4DxhZl7I5Z/view?usp=sharing):**  
+- SALID2: Sub-city ID (8 digits). 
+- L2temp_pw: Population weighted temperature mean at L2 level (sub-city). 
+- L2temp_x: Unweighted temperature mean at L2 level (sub-city). 
 - date: year-month-day. 
 
-Preview *L2_2001_2015_v3.csv*:  
+Preview *L2_96_15.csv*:  
 
 <img src="scripts/L2_preview.png" align="center" width="40%">
 
