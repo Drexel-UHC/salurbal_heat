@@ -68,7 +68,7 @@ where 〖area〗_i is the area of the overlap between grid cell i and the spatia
 
 Preview *L1AD_UX_96_15.csv*:  
 
-<img src="scripts/L1_preview.png" align="center" width="60%">
+<img src="scripts/L1_preview.PNG" align="center" width="60%">
 
 **Codebook for [L2 data](https://drive.google.com/drive/folders/1VMb7JpvLAMVuypfpp7uk_FQebS3qQvHU?usp=sharing):**  
 - L2Name: Sub-city name
@@ -82,7 +82,7 @@ Preview *L1AD_UX_96_15.csv*:
 
 Preview *L2_96_15.csv*:  
 
-<img src="scripts/L2_preview.png" align="center" width="40%">
+<img src="scripts/L2_preview.PNG" align="center" width="60%">
 
 **Contact:** 
 - Yang Ju (yangju90@berkeley.edu)
