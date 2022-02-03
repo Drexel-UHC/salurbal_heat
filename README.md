@@ -24,7 +24,7 @@ One of SALURBAL's objectives is investigating temperature as exposure in relatio
 
 ## Data Imputation
 
-To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels: 
+To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5Land pixels: 
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=ERA5land=f(X)%2B\epsilon">
 </p>
@@ -34,10 +34,10 @@ where:
 - <img src="https://render.githubusercontent.com/render/math?math=f(X)"> is a function that uses X to regress ERA5land temperature. Here we used random forest regression.  
 - <img src="https://render.githubusercontent.com/render/math?math=\epsilon"> is the residual, or <img src="https://render.githubusercontent.com/render/math?math=ERA5land-f(X)">, which we further modeled with kriging spatial interpolation.  
 
-We ran this model by each day and each geographic unit (L1AD) containing missing ERA5 missing pixels. In each geographic unit, we included all ERA5land pixels and pixels within a 15-pixel buffer from the boundary to have enough samples to build the model above. To avoid overfitting, we used cross-validation to tune the parameters for both random forest regression and kriging spatial interpolation. Finally, we used the resulting model to impute the missing values.  
+We ran this model by each day and each geographic unit (L1AD) containing missing ERA5 missing pixels. In each geographic unit, we included all ERA5Land pixels and pixels within a 15-pixel buffer from the boundary to have enough samples to build the model above. To avoid overfitting, we used cross-validation to tune the parameters for both random forest regression and kriging spatial interpolation. Finally, we used the resulting model to impute the missing values.  
 
 **Note**: In two cases we did not include kriging spatial interpolation in the imputation:
-1. If adding kriging spatial interpolation led to worse model fit when compared with using random forest regression alone, in where we had both ERA5 and ERA5land coverage;
+1. If adding kriging spatial interpolation led to worse model fit when compared with using random forest regression alone, in where we had both ERA5 and ERA5Land coverage;
 2. If kriging spatial interpolation produced large values, which we seldomly found for the missing pixels. We decided the threshold to be 1 degree in absolute value. We chose this threshold as we observed the model residuals from using random forest alone were less than 1. Since kriging spatial interpolation was meant to further reduce these residuals, we considered kriging values greater than 1 to be anomalies and thus abandoned. 
 
 ## Calculting areal-level temperature 
