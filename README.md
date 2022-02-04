@@ -20,7 +20,7 @@ One of SALURBAL's objectives is investigating temperature as exposure in relatio
 ### Python script for computing population-weighted mean daily temperature for SALURBAL cities:
 - [Python code](https://github.com/Drexel-UHC/salurbal_heat/blob/master/scripts/ERA_land_fill__final_version_vZonalStats.py)
 
----
+--- 
 
 ## Data Imputation
 
