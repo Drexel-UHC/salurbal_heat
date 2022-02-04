@@ -14,7 +14,7 @@ One of SALURBAL's objectives is investigating temperature as exposure in relatio
 - [ERA5Land imputed data](https://drive.google.com/drive/u/1/folders/1lpLFuolGD9iz7jNLnbh9kyjODtkg9Yk-)
 
 ### Access to final data:
-- [L1 AD and UX data](https://drive.google.com/drive/u/1/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn)
+- [L1 AD and UX data](https://drive.google.com/drive/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn?usp=sharing)
 - [L2 data](https://drive.google.com/drive/folders/1VMb7JpvLAMVuypfpp7uk_FQebS3qQvHU?usp=sharing)
 
 ### Python script for computing population-weighted mean daily temperature for SALURBAL cities:
@@ -53,10 +53,10 @@ where 〖area〗_i is the area of the overlap between grid cell i and the spatia
 
 
 **Notes**:  
-- The final tables of population-weighted mean daily temperature are [L1AD_UX_96_15.csv](https://drive.google.com/drive/u/1/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn) and [L2_96_15.csv](https://drive.google.com/drive/u/1/folders/1VMb7JpvLAMVuypfpp7uk_FQebS3qQvHU). 
+- The final tables of population-weighted mean daily temperature are [L1AD_UX_96_15.csv](https://drive.google.com/drive/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn?usp=sharing) and [L2_96_15.csv](https://drive.google.com/drive/folders/1VMb7JpvLAMVuypfpp7uk_FQebS3qQvHU?usp=sharing). 
 ---
 
-**Codebook for [L1AD and UX data](https://drive.google.com/drive/u/1/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn):**  
+**Codebook for [L1AD and UX data](https://drive.google.com/drive/folders/15eW8UumtN8Q-9b_q9fxbJGkVQA4kRHHn?usp=sharing):**  
 - L1Name: City name
 - Country: Country name
 - date: year-month-day
